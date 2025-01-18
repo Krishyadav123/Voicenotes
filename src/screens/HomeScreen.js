@@ -1,7 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { TextInput } from 'react-native-paper';
 import { COLORS } from '../constants/theme';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -10,8 +12,14 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.upgradeBtn}>
           <Text style={styles.upgradeText}>Upgrade</Text>
         </View>
-        <View style={{ width: 30, height: 30, backgroundColor: 'gray', borderRadius: 50 }}></View>
-        <View style={{ width: 30, height: 30, backgroundColor: '#F4F4F4', borderRadius: 5 }}></View>
+        <View>
+          <MaterialIcons name="shape-circle-plus" size={25} color="lightgray" />
+        </View>
+        <Pressable
+        onPress={() => navigation.navigate('Profile')}
+        >
+        <AntDesign name="appstore-o" size={25} color="gray" />
+        </Pressable>
       </View>
 
       <View>
@@ -42,8 +50,12 @@ const HomeScreen = ({ navigation }) => {
         <Text
          onPress={() => navigation.navigate('Record')}
         style={styles.TabText} >Record</Text>
-        <Text style={[styles.TabText, { backgroundColor:"#F4F4F4", color: 'black' }]} >Ask Ai</Text>
-        <Text style={[styles.TabText, { backgroundColor:"#F4F4F4", color: 'black' }]} >Create</Text>
+        <Text
+         onPress={() => navigation.navigate('Ask AI')}
+        style={[styles.TabText, { backgroundColor:"#F4F4F4", color: 'black' }]} >Ask Ai</Text>
+        <Text 
+         onPress={() => navigation.navigate('Create')}
+        style={[styles.TabText, { backgroundColor:"#F4F4F4", color: 'black' }]} >Create</Text>
       </View>
     </View>
   );

@@ -7,6 +7,7 @@ import HomeScreen from "../screens/HomeScreen";
 import RecordScreen from "../screens/RecordScreen";
 import AskAIScreen from "../screens/AskAIScreen";
 import CreateScreen from "../screens/CreateScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Record" component={RecordScreen} />
       <Stack.Screen name="Ask AI" component={AskAIScreen} />
       <Stack.Screen name="Create" component={CreateScreen} />
+      <Stack.Screen name="Profile" component={ProfileScreen} />
 
       {/* Home route includes the Tab Navigator */}
       {/* <Stack.Screen name="Home" component={TabNavigator} /> */}
